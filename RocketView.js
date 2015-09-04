@@ -3,9 +3,7 @@ define(['backbone'], function(Backbone){
         events: {
             "click .changeSize": "changeSize",
             "click .deleteRow": "deleteRow",
-            "blur .size": "editTable",
-            "blur .name": "editTable",
-            "blur .description": "editTable"
+            "blur .size .name .description": "editSize"
         },
 
         initialize: function() {
@@ -25,12 +23,14 @@ define(['backbone'], function(Backbone){
         changeSize: function(e) {
             var inc = parseInt($(e.target).attr('data-rel'));
             var size = this.model.get('size');
-            this.model.set({
+            var valid =this.model.set({
                 size: size + inc
-            }, {validate: true})
+            }, {validate: true});
+
+            if (!valid) this.render();
         },
 
-        editTable: function() {
+        editSize: function() {
             this.model.set({
                 name: this.$(".name").text(),
                 description: this.$(".description").text(),

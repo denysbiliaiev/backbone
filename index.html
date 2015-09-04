@@ -7,22 +7,37 @@
 <body>
 
 <div class="container">
-    <button id="toJSON" class="btn btn-primary">toJSON</button></br></br>
-
-    <div class="hero-unit">
-        <div id="rocket"></div>
-    </div></br>
-    JSON:
-    <div id="json"></div>
-
-
+    <div class="hero-unit span-8" id="rockets"></div>
 </div>
 
-<script type="text/template" id="viewRocket">
-    Name:
-    <span class="name" contenteditable="true"><%- name %></span>
-    <div class="size form-horizontal">
 
+<script type="text/template" id="viewRockets">
+
+        <button class="btn btn-success addObject">add rocket</button>
+        <button class="btn btn-info toJSON">to JSON</button>
+
+        <table class="table table-striped">
+            <thead>
+                <th data-sort="name">Name</th>
+                <th data-sort="size">Size</th>
+                <th data-sort="description">Description</th>
+                <th>Actions</th>
+            </thead>
+            <tbody class="rocketsList"></tbody>
+        </table>
+
+        <div class="rocketsTotal">
+            Total items: <span class="total-items">0</span>
+            Total size: <span class="total-size">0</span>
+        </div>
+
+        <pre class="json-out"></pre>
+
+</script>
+
+
+<script type="text/template" id="viewRocket">
+    <div class="size form-horizontal">
         <button data-rel="-10" class="changeSize btn btn-small btn-primary">-</button>
 
         <input class="size" type="number" value="<%- size %>"/>
@@ -32,8 +47,6 @@
         Remove
         <button class="deleteRow btn btn-small btn-danger"><i class="icon-remove icon-white"/></button>
     </div>
-    Description:
-    <span class="description" contenteditable="true"><%- description %></span>
 </script>
 
 </body>

@@ -1,0 +1,22 @@
+#tabs {
+  margin-bottom: 10px;
+}
+
+#tabs a{
+    background-color: grey;
+    padding:5px;
+    font: bold 12pt "Trebuchet MS", tahoma, verdana, arial narrow, arial;
+    color:#fff;
+    text-decoration:none; 
+    
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+a.active{
+  background-color: #478CFB !important;
+}

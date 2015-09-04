@@ -1,6 +1,7 @@
 define(['backbone'], function(Backbone){
 
     var RocketModel = Backbone.Model.extend({
+
         defaults: {
             name: 'name',
             description: 'description',

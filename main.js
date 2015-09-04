@@ -25,24 +25,11 @@ define(["jquery", "underscore", "backbone", "../RocketCollection", "../RocketMod
     function ($, _, Backbone, RocketCollection, RocketModel, RocketView) {
         var app = app || {};
 
-        app.rocketCollection = new RocketCollection({
-            model: RocketModel
-        });
-
         app.rocketModel = new RocketModel();
 
-        app.rocketCollection.add(app.rocketModel);
-
-        app.rocketCollection.add([{name:'test1'}, {size: 55}]);
-
         app.rocketView = new RocketView({
-            el: '#rocket',
+            el: '#rockets',
             model: app.rocketModel,
-        });
-
-        $("#toJSON").click(function() {
-            console.log(app.rocketCollection.toJSON());
-            $("#json").text(app.rocketCollection.toJSON().toString());
         });
     }
 );
